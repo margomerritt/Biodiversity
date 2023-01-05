@@ -115,8 +115,8 @@ function buildCharts(sample) {
       mode: "markers",
       marker: {
         size: firstSample.sample_values,
-        color: firstSample.sample_values,
-        colorscale: "Portland"
+        color: firstSample.otu_ids,
+        colorscale: "Blackbody"
       }
     }];
 
