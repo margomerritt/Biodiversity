@@ -67,10 +67,7 @@ function buildCharts(sample) {
     var filteredSamples = samples.filter(sampleObj => sampleObj.id == sample);
 
     // Deliverable 3: 1. Create a variable that filters the metadata array for the object with the desired sample number.
-    
-    var sampleNumber = data.sampleNumber;
-
-    var filteredArray = sampleNumber.filter(sampleObj => sampleObj.id == sample);
+    var filteredArray = data.metadata.filter(sampleObj => sampleObj.id == sample);
 
     // Deliverable 1: 5. Create a variable that holds the first sample in the array.
     var firstSample = filteredSamples[0];
@@ -165,9 +162,21 @@ function buildCharts(sample) {
 
 
     // Deliverable 3: 5. Create the layout for the gauge chart.
-    var gaugeLayout = {
-      automargin: true
-    };
+   // var gaugeLayout = {
+      //automargin: true
+
+    //};
+    
+    var gaugeLayout = { width: 600, height: 450, margin: { t: 0, b: 0 } };
+
+    // var gaugeLayout = {
+    //   width: 500,
+    //   height: 400,
+    //   margin: { t: 25, r: 25, l: 25, b: 25 },
+    //   paper_bgcolor: "lavender",
+    //   font: { color: "darkblue", family: "Arial" }
+    // };
+
     // Deliverable 3: 6. Use Plotly to plot the gauge data and layout.
       Plotly.newPlot("gauge", gaugeData, gaugeLayout)
   });
